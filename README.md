@@ -2,6 +2,10 @@
 
 A small dependency-free Snake game built with HTML, CSS, and JavaScript modules.
 
+## Live demo
+
+Play it at https://frgardin.github.io/snake-game/.
+
 ## Run locally
 
 ```bash
