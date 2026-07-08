@@ -1,0 +1,173 @@
+:root {
+  color-scheme: light;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #f5f7f6;
+  color: #18211d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+button {
+  min-height: 44px;
+  border: 1px solid #9aa7a0;
+  border-radius: 6px;
+  background: #ffffff;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  border-color: #305f43;
+  outline: 2px solid #bad9c7;
+  outline-offset: 2px;
+}
+
+.game-shell {
+  width: min(100%, 560px);
+}
+
+.game-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+p {
+  margin: 8px 0 0;
+  color: #536059;
+}
+
+.score-panel {
+  min-width: 92px;
+  padding: 10px 12px;
+  border: 1px solid #c5cec9;
+  border-radius: 8px;
+  background: #ffffff;
+  text-align: right;
+}
+
+.score-panel span {
+  display: block;
+  font-size: 0.78rem;
+  color: #536059;
+}
+
+.score-panel strong {
+  font-size: 1.6rem;
+}
+
+.board-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid #a9b6af;
+  border-radius: 8px;
+  background: #dfe7e2;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.status {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.88);
+  text-align: center;
+  font-weight: 700;
+}
+
+.status:empty {
+  display: none;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.actions button:first-child {
+  background: #305f43;
+  border-color: #305f43;
+  color: #ffffff;
+}
+
+.d-pad {
+  display: none;
+  grid-template-columns: repeat(3, 56px);
+  grid-template-areas:
+    ". up ."
+    "left . right"
+    ". down .";
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.d-pad button {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.d-pad [data-direction="up"] {
+  grid-area: up;
+}
+
+.d-pad [data-direction="left"] {
+  grid-area: left;
+}
+
+.d-pad [data-direction="right"] {
+  grid-area: right;
+}
+
+.d-pad [data-direction="down"] {
+  grid-area: down;
+}
+
+@media (max-width: 620px), (pointer: coarse) {
+  body {
+    align-items: start;
+    padding: 16px;
+  }
+
+  .game-header {
+    align-items: center;
+  }
+
+  .d-pad {
+    display: grid;
+  }
+}
